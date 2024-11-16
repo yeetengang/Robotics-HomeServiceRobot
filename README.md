@@ -43,22 +43,21 @@ $ sudo apt-get install ros-noetic-navigation
 │       └── add_markers.cpp
 ├── maps                                # Simulation maps
 |   ├── myrobot0125map.pgm
-|   ├── myrobot0125map.yaml
+|   └── myrobot0125map.yaml
 ├── rvizConfig                          # Simulation Rviz file with marker
-|   ├── home_service.rviz
+|   └── home_service.rviz
 ├── scripts                             # Shell scripts
 |   ├── add_markers.sh
 |   ├── home_service.sh
 |   ├── pick_objects.sh
 |   ├── test_navigation.sh
-|   ├── test_slam.sh
+|   └── test_slam.sh
 ├── worlds                              # Simulation world
-|   ├── Project1_MyHomeWorld.world
+|   └── Project1_MyHomeWorld.world
 ├── images                              # Simulation images
-│   ├── home.png
-│   ├── home_service.gif
-│   ├── home_service_map.png
-│   └── rviz.png
+│   ├── gazebo.PNG
+│   ├── home_service_robot.gif
+│   └── sampleResultAfterDelivered.PNG
 └── pick_objects                        # Commands the robot to navigate to the desired pick-up and drop-off zones
     ├── CMakeLists.txt
     ├── package.xml
