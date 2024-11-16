@@ -4,6 +4,8 @@ Home Service Robot is a project that simulated in ROS and Gazebo. The robot perf
 
 This project is part of course 6 in Udacity Robotics Software Engineer Nanodegree.
 
+<img src="images/home_service_robot.gif" alt="homeServiceRobot" width="" height="200"></a>
+
 ## Project Info
 This project deploy turtlebot.
 The project consist of:
@@ -12,6 +14,8 @@ The project consist of:
 3. Use Adaptive Monte Carlo Localization (AMCL) from amcl package to localize robot.
 4. pick_objects node to navigate robot to pick up and drop off zone.
 5. add_markers node that subscribe to robot odometry and publish markers to simulate object pick up and drop off.
+
+<img src="images/gazebo.PNG" alt="gazebo" width="" height="200"></a>
 
 ## Prerequisites
 1. Linux (Ubuntu 20.04)
@@ -110,4 +114,6 @@ $ ./home_service.sh
 The robot will use the generated map and localize itself with acml package. 
 Robot will navigate to a virtual object, pick-up the object, and navigate back to drop-off zone. 
 The virtual object, representing as a green cube, will disappear when robot get close to it (Picked up indication), and appear at drop-off zone when robot navigate to drop off point.
+
+<img src="images/sampleResultAfterDelivered.PNG" alt="sampleresult" width="" height="200"></a>
 
