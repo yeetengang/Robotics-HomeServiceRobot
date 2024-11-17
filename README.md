@@ -158,6 +158,9 @@ This shell script will launch:
 ## Virtual Objects
 Model a virtual object to simulate item pick-up and drop off events.
 add_markers_time.cpp include function to spawn marker at pick-up location for 5 seconds. Then, hide the marker for another 5 seconds to simulate item being picked up. Finally, re-spawn the marker at drop-off location to simulate item being dropped off at drop-off point.
+
+Dependencies of add_markers package:
+1. visualization_msgs: ROS package for set of messages used by Rviz, marker message is used to send visualization "markers" such as boxes, spheres, arrows, lines, etc. The virtual objects in this part utilize this package's marker, which can publish messages that will capture and shown in Rviz. 
 ```
 $ ./add_markers.sh
 ```
