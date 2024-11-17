@@ -98,7 +98,7 @@ $ sudo chmod +x *.sh
 ```
 
 ## SLAM Testing
-Perform SLAM by teleoperating robot via teleop keyboard.
+Perform SLAM by teleoperating robot via teleop keyboard. SLAM (simultaneous localization and mapping) is a method that build a map and localize your vehicle in that map at the same time, which allow robot to map out unknown environments. The map information will helps in path planning and obstacle avoidance.
 ```
 $ ./test_slam.sh
 ```
