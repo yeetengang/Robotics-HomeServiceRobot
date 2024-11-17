@@ -40,7 +40,7 @@ $ sudo apt-get install ros-noetic-openslam-gmapping
 ├── README.md
 ├── slam_testing_map.pgm                # Map file generated from SLAM testing
 ├── slam_testing_map.yaml               # Map file generated from SLAM testing
-├── config                              # Publishes markers to Rviz to simulate the object pick-up and drop-off
+├── config                              # Marker configurations for pick up & drop off location
 |   └── marker_config.yaml
 ├── add_markers                         # Publishes markers to Rviz to simulate the object pick-up and drop-off
 │   ├── CMakeLists.txt
