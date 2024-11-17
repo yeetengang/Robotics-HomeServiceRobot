@@ -29,8 +29,10 @@ $ sudo apt-get update && sudo apt-get upgrade -y
 $ sudo apt-get install ros-noetic-turtlebot3
 $ sudo apt-get install ros-noetic-teleop-twist-keyboard
 $ sudo apt-get install ros-noetic-openslam-gmapping
-$ sudo apt-get install ros-noetic-navigation
 ```
+1. ros-noetic-turtlebot3: Deploy a turtlebot in a gazebo environment by linking a world file to it
+2. ros-noetic-teleop-twist-keyboard: Allow user to manually control a robot with keyboard inputs
+3. ros-noetic-openslam-gmapping: Perform SLAM and build a map of environment with robot equipped laser range finder sensors.
 
 ## Project Structure
 ```
@@ -38,6 +40,8 @@ $ sudo apt-get install ros-noetic-navigation
 ├── README.md
 ├── slam_testing_map.pgm                # Map file generated from SLAM testing
 ├── slam_testing_map.yaml               # Map file generated from SLAM testing
+├── config                              # Publishes markers to Rviz to simulate the object pick-up and drop-off
+|   └── marker_config.yaml
 ├── add_markers                         # Publishes markers to Rviz to simulate the object pick-up and drop-off
 │   ├── CMakeLists.txt
 │   ├── package.xml
@@ -121,7 +125,7 @@ Below is the sample result after I navigate some part of my world:
 <img src="images/slam_testing_map_sample.PNG" alt="sampleresultMap" width="" height="250"></a>
 
 ## Localization and Navigation Testing
-Check robot's ability to reach selected goal.
+In Localization and Navigation testing, we will use AMCL package. With the supports of AMCL package, it implement Adaptive Monte Carlo Localization approach, which uses particle filter for tracking pose of the robot with respect to the known map provided. 
 ```
 $ ./test_navigation.sh
 ```
@@ -131,10 +135,11 @@ This shell script will launch:
 3. view_navigation.launch to observe map in Rviz.
 
 Press the 2D Nav Goal button in Rviz and click on map to select goal for robot to navigate.
-With the supports of AMCL package, it implement Adaptive Monte Carlo Localization approach, which uses particle filter for tracking pose of the robot with respect to the known map provided. 
 
 ## Navigation Goal Node
 Autonomously navigate robot to pick-up zone and drop-off zone.
+pick_objects.cpp include function to navigate robot from starting location to pick-up location. Once robot reached pick-up location, it stay there for 5 seconds and then proceed to move to drop-off location. 
+With the support of AMCL package, robot is able to track its position in the known map provided. Therefore, robot is able to plan the path to reach its destination (pick-up/drop-off location), while avoiding obstacles and walls of the environment.
 ```
 $ ./pick_objects.sh
 ```
@@ -144,10 +149,9 @@ This shell script will launch:
 3. home_service_rviz.launch which will take my Rviz configuration to have better view of pick-up zone and drop-off zone.
 4. pick_objects node with pick_objects.cpp function.
 
-pick_objects.cpp include function to navigate robot from starting location to pick-up location. Once robot reached pick-up location, it stay there for 5 seconds and then proceed to move to drop-off location. 
-
 ## Virtual Objects
 Model a virtual object to simulate item pick-up and drop off events.
+add_markers_time.cpp include function to spawn marker at pick-up location for 5 seconds. Then, hide the marker for another 5 seconds to simulate item being picked up. Finally, re-spawn the marker at drop-off location to simulate item being dropped off at drop-off point.
 ```
 $ ./add_markers.sh
 ```
@@ -156,8 +160,6 @@ This shell script will launch:
 2. amcl_demo.launch to localize turtlebot with my previously generated map file.
 3. home_service_rviz.launch which will take my Rviz configuration to have better view of pick-up zone and drop-off zone.
 4. add_markers node with add_markers_time.cpp function, pick-up drop-off location params are defined in marker_config.yaml file.
-
-add_markers_time.cpp include function to spawn marker at pick-up location for 5 seconds. Then, hide the marker for another 5 seconds to simulate item being picked up. Finally, re-spawn the marker at drop-off location to simulate item being dropped off at drop-off point.
 
 ## Home Service Robot
 Simulate full home service robot which will autonomously navigate to pick up zone, pick up item, navigate to drop off point, and drop the item at drop-off point:
