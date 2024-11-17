@@ -39,7 +39,10 @@ $ sudo apt-get install ros-noetic-navigation
 ├── add_markers                         # Publishes markers to Rviz to simulate the object pick-up and drop-off
 │   ├── CMakeLists.txt
 │   ├── package.xml
+│   ├── launch
+|   |   └── home_service_rviz.launch
 │   └── src
+|       ├── add_markers_time.cpp
 │       └── add_markers.cpp
 ├── maps                                # Simulation maps
 |   ├── myrobot0125map.pgm
@@ -111,10 +114,9 @@ Use keyboard to navigate around the world, save the map via commands below:
 ```
 rosrun map_server map_saver -f <map-location-and-name>
 ```
+Below is the sample result after I navigate some part of my world:
 
 <img src="images/slam_testing_map_sample.PNG" alt="sampleresultMap" width="" height="250"></a>
-
-Below is the sample result after I navigate some part of my world:
 
 ## Localization and Navigation Testing
 Check robot's ability to reach selected goal.
