@@ -127,7 +127,7 @@ Below is the sample result after I navigate some part of my world:
 <img src="images/slam_testing_map_sample.PNG" alt="sampleresultMap" width="" height="250"></a>
 
 ## Localization and Navigation Testing
-In Localization and Navigation testing, we will use AMCL package. With the supports of AMCL package, it implement Adaptive Monte Carlo Localization approach, which uses particle filter for tracking pose of the robot with respect to the known map provided. With this information, robot will be able to estimating their current orientation and location in the environment, perform path planning, and avoid obstacles while travelling, which will be shown in the next section, Navigation Goal Node.
+In Localization and Navigation testing, we will use AMCL package. With the supports of AMCL package, it implement Adaptive Monte Carlo Localization approach, which uses particle filter for tracking pose of the robot with respect to the known map provided. With this information, robot will be able to estimating their current orientation and location in the environment, perform path planning, and avoid obstacles while travelling.
 ```
 $ ./test_navigation.sh
 ```
