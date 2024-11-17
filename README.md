@@ -137,9 +137,15 @@ This shell script will launch:
 Press the 2D Nav Goal button in Rviz and click on map to select goal for robot to navigate.
 
 ## Navigation Goal Node
-Autonomously navigate robot to pick-up zone and drop-off zone.
+In this part, we use pick_objects package, which autonomously navigate robot to pick-up zone and drop-off zone.
 pick_objects.cpp include function to navigate robot from starting location to pick-up location. Once robot reached pick-up location, it stay there for 5 seconds and then proceed to move to drop-off location. 
 With the support of AMCL package, robot is able to track its position in the known map provided. Therefore, robot is able to plan the path to reach its destination (pick-up/drop-off location), while avoiding obstacles and walls of the environment.
+
+Dependencies of pick_objects package:
+1. move_base_msgs: ROS package that is used to communicate with the move_base node. The move_base node links together a global and local planner to accomplish its global navigation task
+2. action_lib: ROS package that provide tools to send goals or get feedbacks/state from a ROS entities (robot).
+3. roscpp: Interface with ROS topics, services, and parameters in C++ scripts.
+
 ```
 $ ./pick_objects.sh
 ```
