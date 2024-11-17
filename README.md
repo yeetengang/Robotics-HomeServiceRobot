@@ -36,6 +36,8 @@ $ sudo apt-get install ros-noetic-navigation
 ```
 . Robotics-HomeServiceRobot
 ├── README.md
+├── slam_testing_map.pgm                # Map file generated from SLAM testing
+├── slam_testing_map.yaml               # Map file generated from SLAM testing
 ├── add_markers                         # Publishes markers to Rviz to simulate the object pick-up and drop-off
 │   ├── CMakeLists.txt
 │   ├── package.xml
