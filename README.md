@@ -105,7 +105,8 @@ $ sudo chmod +x *.sh
 
 ## SLAM Testing
 Perform SLAM by teleoperating robot via teleop keyboard. SLAM (simultaneous localization and mapping) is a method that build a map and localize your vehicle in that map at the same time, which allow robot to map out unknown environments. The map information will helps in path planning and obstacle avoidance.
-The slam_gmapping used here it a wrapper of GMapping SLAM library. This GMapping SLAM library is using SLAM method, which take the laser and pose data collected by the robot to create 2-D occupancy grid maps as shown in the image down below this section.
+
+The slam_gmapping used by launching gmapping_demo.launch is a wrapper of GMapping SLAM library. This GMapping SLAM library is using SLAM method to create 2-D occupancy grid maps from the laser and pose data collected by the robot. The result is as shown in the image down below this section.
 ```
 $ ./test_slam.sh
 ```
