@@ -10,7 +10,6 @@ Panels:
         - /Local Map1/Planner1
         - /Local Map1/Trajectory Cloud1
         - /Marker1
-        - /Marker1/Status1
       Splitter Ratio: 0.5
     Tree Height: 536
   - Class: rviz/Selection
@@ -528,7 +527,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -6.720029830932617
+      Angle: -6.285029888153076
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -540,8 +539,8 @@ Visualization Manager:
       Near Clip Distance: 0.009999999776482582
       Scale: 96.64820098876953
       Target Frame: <Fixed Frame>
-      X: -1.3533600568771362
-      Y: 2.0439798831939697
+      X: -0.9698207974433899
+      Y: -1.3114820718765259
     Saved: ~
 Window Geometry:
   Displays:
@@ -559,5 +558,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1540
-  X: -63
-  Y: 51
+  X: 8
+  Y: 83

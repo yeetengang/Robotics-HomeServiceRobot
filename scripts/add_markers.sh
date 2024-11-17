@@ -17,11 +17,12 @@ sleep 5
 # launch view_navigation for rviz
 xterm -e "cd $(pwd)/../..;
 source devel/setup.bash;
-roslaunch turtlebot_rviz_launchers view_navigation.launch" &
+roslaunch add_markers home_service_rviz.launch rviz_config_file:=$(pwd)/../rvizConfig/home_service.rviz" &
 
 sleep 20 # wait until visualization launch complete
 
 # launch add_markers node
 xterm -e "cd $(pwd)/../..;
 source devel/setup.bash;
-rosrun add_markers add_markers " &
+rosparam load $(pwd)/../config/marker_config.yaml;
+rosrun add_markers add_markers_time "
